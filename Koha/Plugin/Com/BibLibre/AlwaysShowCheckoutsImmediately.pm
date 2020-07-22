@@ -61,6 +61,11 @@ sub intranet_js {
  */
 $(document).ready(function(){
 
+// create patron checkouts cookie if not exists
+if ( typeof script !== 'undefined' && ! $.cookie("issues-table-load-immediately-" + script) ) {
+    $.cookie("issues-table-load-immediately-" + script, true, { expires: 365 });
+}
+
 });
 
 </script>
