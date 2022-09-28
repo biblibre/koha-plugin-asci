@@ -6,14 +6,14 @@ use base qw(Koha::Plugins::Base);
 
 use C4::Context;
 
-our $VERSION = '1.1';
+our $VERSION = '1.2';
 
 our $metadata = {
     name   => 'Always Show Checkouts Immediately',
     author => 'BibLibre',
     description => 'Always show checkouts immediately in staff interface',
     date_authored   => '2020-07-22',
-    date_updated    => '2021-11-30',
+    date_updated    => '2022-09-28',
     minimum_version => '18.11',
     maximum_version => undef,
     version         => $VERSION,
@@ -65,5 +65,22 @@ if ( typeof script !== 'undefined' && ! $.cookie("issues-table-load-immediately-
 </script>
 %;
 }
+
+sub intranet_head {
+    my ( $self ) = @_;
+
+    return q|
+<style>
+/*
+ * Always Show Checkouts Immediately
+ */
+label[for='issues-table-load-immediately'], input#issues-table-load-immediately {
+    display:none;
+}
+</style>
+|;
+}
+
+
 
 1;
