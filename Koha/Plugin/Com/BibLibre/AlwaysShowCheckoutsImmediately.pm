@@ -13,8 +13,8 @@ our $metadata = {
     author => 'BibLibre',
     description => 'Always show checkouts immediately in staff interface',
     date_authored   => '2020-07-22',
-    date_updated    => '2022-09-28',
-    minimum_version => '18.11',
+    date_updated    => '2023-01-30',
+    minimum_version => '22.05',
     maximum_version => undef,
     version         => $VERSION,
 };
@@ -59,8 +59,8 @@ sub intranet_js {
 /*
  * Always Show Checkouts Immediately
  */
-if ( typeof script !== 'undefined' && ! $.cookie("issues-table-load-immediately-" + script) ) {
-    $.cookie("issues-table-load-immediately-" + script, true, { expires: 365, path: '/' });
+if ( typeof script !== 'undefined' && ! Cookies.get("issues-table-load-immediately-" + script) ) {
+    Cookies.set("issues-table-load-immediately-" + script, true, { expires: 365, path: '/' });
 }
 </script>
 %;
