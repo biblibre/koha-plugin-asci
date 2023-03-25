@@ -14,7 +14,7 @@ our $metadata = {
     description => 'Always show checkouts immediately in staff interface',
     date_authored   => '2020-07-22',
     date_updated    => '2023-03-24',
-    minimum_version => '22.05',
+    minimum_version => '18.11',
     maximum_version => undef,
     version         => $VERSION,
 };
