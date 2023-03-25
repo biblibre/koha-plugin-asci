@@ -59,7 +59,7 @@ sub intranet_js {
 /*
  * Always Show Checkouts Immediately
  */
-  if ( typeof script !== 'undefined' && ! Cookies.get("issues-table-load-immediately-" + script) ) {
+  if ( typeof script !== 'undefined' && Cookies.get("issues-table-load-immediately-" + script) != "true" ) {
     Cookies.set("issues-table-load-immediately-" + script, true, { expires: 365, sameSite: 'Lax' });
   }
 </script>
